@@ -2,27 +2,27 @@ module.exports = {
     multiProject: false /* Enable searching projects with component folder path */,
     skipFinalStep: false /* Toggle final step agreement */,
     checkExistenceOnCreate: false /* Enable check folder for components which can be replaced */,
-    folderPath: 'src/' /* Destination path or array of paths to create components */,
+    folderPath: 'contents/' /* Destination path or array of paths to create components */,
     templatesFolder: 'templates' /* Folder with templates */,
     templates: [
         {
             name: 'component',
             files: {
                 /* Component folder structure declaration */
+                // index: {
+                //     name: 'index.ts',
+                //     file: 'index.tmp'
+                // },
                 index: {
-                    name: 'index.ts',
-                    file: 'index.tmp'
-                },
-                component: {
-                    name: '[name].tsx',
+                    name: 'index.tsx',
                     file: [
                         { name: 'fc.tmp', description: 'Functional component' },
                         { name: 'class.tmp', description: 'Class component' }
                     ]
                 },
                 style: {
-                    name: '[name].module.css',
-                    optional: true
+                    name: '[name].styles.tsx',
+                    optional: true,
                 },
                 stories: {
                     name: '[name].stories.tsx',
@@ -43,7 +43,7 @@ module.exports = {
         /* Template placeholders */
         NAME: ({ componentName }) => componentName,
         COMPONENT_FILE_PREFIX: ({ filePrefix }) => filePrefix,
-        STYLE: ({ files }) => (files.style ? `\nimport styles from './${files.style.name}';\n` : ''),
+        STYLE: ({ files, componentName }) => (files.style ? `\nimport styles from './${componentName}.styles';\n` : ''),
         STORY_PATH: ({ join, project, destinationFolder, componentName }) =>
             join(project, destinationFolder, componentName)
     }
