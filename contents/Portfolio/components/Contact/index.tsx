@@ -1,9 +1,9 @@
 import React from 'react';
 
-import styles from './Contact.styles';
+// import styles from './Contact.styles';
 
 type ContactProps = {};
 
 export const Contact: React.FC<ContactProps> = props => {
-    return <div />;
+    return <div>contact</div>;
 };

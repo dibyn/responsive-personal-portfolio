@@ -17,7 +17,7 @@ module.exports = {
                     name: 'index.tsx',
                     file: [
                         { name: 'fc.tmp', description: 'Functional component' },
-                        { name: 'class.tmp', description: 'Class component' }
+                        // { name: 'class.tmp', description: 'Class component' }
                     ]
                 },
                 style: {
@@ -34,7 +34,7 @@ module.exports = {
                     name: '[name].test.tsx' /*'__tests__/[name].test.tsx' to put tests into subfolder*/,
                     file: 'test.tmp',
                     optional: true,
-                    default: false
+                    // default: true
                 }
             }
         }
