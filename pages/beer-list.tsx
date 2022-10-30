@@ -1,7 +1,7 @@
 import React, { FormEvent, memo, useCallback, useState, useEffect } from 'react';
 import { useQuery } from '@tanstack/react-query';
 import { getBeers } from '../api/index.api';
-import RenderBeerList from '../pageContents/pageComponents/RenderBeerList';
+import RenderBeerList from '../contents/pageComponents/RenderBeerList';
 
 const BEER_FETCH_NUMBER = 7
 const index = memo(() => {
